@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 77e401f09e7028944a6830d2bd524e9b, type: 2}
 --- !u!1 &16620422
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,10 +351,10 @@ RectTransform:
   m_Father: {fileID: 1384291172}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 185, y: -49.5}
+  m_SizeDelta: {x: 100, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &118710308
 MonoBehaviour:
@@ -486,10 +486,10 @@ RectTransform:
   m_Father: {fileID: 1384291172}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 295, y: -49.5}
+  m_SizeDelta: {x: 100, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &163124751
 MonoBehaviour:
@@ -621,10 +621,10 @@ RectTransform:
   m_Father: {fileID: 777035788}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 295, y: -149.5}
+  m_SizeDelta: {x: 100, y: 275}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &203605526
 MonoBehaviour:
@@ -694,7 +694,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 232831428}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20, y: 2.5, z: 0}
+  m_LocalPosition: {x: -28.74, y: 2.5, z: 3.89}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -777,6 +777,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b221aff755e075e448e9b4fc4be65979, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrentOccupation: 0
   _hungerSpeed: 3
   _hunger: 100
   _maxHunger: 100
@@ -800,11 +801,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 232831433}
   _agent: {fileID: 232831435}
-  _occupancy: 0
   _computer: {fileID: 1836862351}
   _fridge: {fileID: 1048401027}
   _toilet: {fileID: 1734979454}
-  _workPercentFunction:
+  _workDistanceFunction:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
@@ -828,7 +828,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _hungerPercentFunction:
+  _hungerDistanceFunction:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
@@ -852,7 +852,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _toiletPercentFunction:
+  _toiletDistanceFunction:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
@@ -879,6 +879,10 @@ MonoBehaviour:
   _workPercentWeight: 0
   _hungerPercentWeight: 0
   _toiletPercentWeight: 0
+  TotalDistance: 0
+  WorkDistance: 0
+  FridgeDistance: 0
+  ToiletDistance: 0
 --- !u!195 &232831435
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -969,10 +973,10 @@ RectTransform:
   m_Father: {fileID: 1676068817}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 185, y: -149.5}
+  m_SizeDelta: {x: 100, y: 275}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &256149101
 MonoBehaviour:
@@ -1163,10 +1167,10 @@ RectTransform:
   m_Father: {fileID: 1676068817}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 295, y: -149.5}
+  m_SizeDelta: {x: 100, y: 275}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &332068418
 MonoBehaviour:
@@ -1581,6 +1585,7 @@ GameObject:
   - component: {fileID: 489168013}
   - component: {fileID: 489168012}
   - component: {fileID: 489168011}
+  - component: {fileID: 489168014}
   m_Layer: 0
   m_Name: Wall West
   m_TagString: Untagged
@@ -1666,6 +1671,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 489168009}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!208 &489168014
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489168009}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &519323794
 GameObject:
   m_ObjectHideFlags: 0
@@ -1732,10 +1753,10 @@ RectTransform:
   m_Father: {fileID: 1676068817}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 75, y: -149.5}
+  m_SizeDelta: {x: 100, y: 275}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &628693409
 MonoBehaviour:
@@ -2058,10 +2079,10 @@ RectTransform:
   m_Father: {fileID: 777035788}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 185, y: -149.5}
+  m_SizeDelta: {x: 100, y: 275}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &857682726
 MonoBehaviour:
@@ -2231,10 +2252,10 @@ RectTransform:
   m_Father: {fileID: 57341046}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 75, y: -49.5}
+  m_SizeDelta: {x: 100, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &951144286
 MonoBehaviour:
@@ -2575,10 +2596,10 @@ RectTransform:
   m_Father: {fileID: 777035788}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 75, y: -149.5}
+  m_SizeDelta: {x: 100, y: 275}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1212573056
 MonoBehaviour:
@@ -2663,6 +2684,7 @@ GameObject:
   - component: {fileID: 1258280536}
   - component: {fileID: 1258280535}
   - component: {fileID: 1258280534}
+  - component: {fileID: 1258280537}
   m_Layer: 0
   m_Name: Wall West
   m_TagString: Untagged
@@ -2748,6 +2770,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1258280532}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!208 &1258280537
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258280532}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1266972867
 GameObject:
   m_ObjectHideFlags: 0
@@ -2765,7 +2803,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1266972868
 Transform:
@@ -3151,6 +3189,7 @@ GameObject:
   - component: {fileID: 1431097917}
   - component: {fileID: 1431097916}
   - component: {fileID: 1431097915}
+  - component: {fileID: 1431097918}
   m_Layer: 0
   m_Name: Wall North
   m_TagString: Untagged
@@ -3236,6 +3275,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1431097913}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!208 &1431097918
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431097913}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1519729531
 GameObject:
   m_ObjectHideFlags: 0
@@ -3708,7 +3763,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1836862350}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2.5}
+  m_LocalPosition: {x: 0, y: -0.1, z: -2.5}
   m_LocalScale: {x: 6, y: 6, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3858,10 +3913,10 @@ RectTransform:
   m_Father: {fileID: 1384291172}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 75, y: -49.5}
+  m_SizeDelta: {x: 100, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1931157911
 MonoBehaviour:
@@ -4090,10 +4145,10 @@ RectTransform:
   m_Father: {fileID: 57341046}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 295, y: -49.5}
+  m_SizeDelta: {x: 100, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1985653337
 MonoBehaviour:
@@ -4336,6 +4391,7 @@ GameObject:
   - component: {fileID: 2041761655}
   - component: {fileID: 2041761654}
   - component: {fileID: 2041761653}
+  - component: {fileID: 2041761656}
   m_Layer: 0
   m_Name: Wall South
   m_TagString: Untagged
@@ -4421,6 +4477,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2041761651}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!208 &2041761656
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041761651}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &2045506939
 GameObject:
   m_ObjectHideFlags: 0
@@ -4584,10 +4656,10 @@ RectTransform:
   m_Father: {fileID: 57341046}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 185, y: -49.5}
+  m_SizeDelta: {x: 100, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2110874462
 MonoBehaviour:

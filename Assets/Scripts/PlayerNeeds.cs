@@ -2,14 +2,23 @@ using System;
 using UnityEngine;
 
 public enum Occupancy{
-    Nothing,
-    Eating,
-    Pissing,
-    Working
+    Nothing = 0,
+    Eating = 1,
+    Pissing = 2,
+    Working = 3
 }
 
 public class PlayerNeeds : MonoBehaviour{
+    private static float[,] NeedsDropSpeed ={
+        { 2, 2, 2},
+        { -8, 2, 2},
+        { 2, -8, 2},
+        { 2, 2, -8}
+    };
+    
     public Transform Transform => transform;
+
+    public Occupancy CurrentOccupation = Occupancy.Nothing;
     
     [Header("Hunger")] [SerializeField] private float _hungerSpeed;
     public float Hunger => _hunger;
@@ -30,12 +39,14 @@ public class PlayerNeeds : MonoBehaviour{
     [SerializeField] private int _maxWork;
     
     void Update(){
-        _hunger -= _hungerSpeed * Time.deltaTime;
-        _toilet -= _toiletSpeed * Time.deltaTime;
-        _work -= _workSpeed * Time.deltaTime;
+        _hunger -= NeedsDropSpeed[(int) CurrentOccupation, 0] * Time.deltaTime;
+        _toilet -= NeedsDropSpeed[(int) CurrentOccupation, 1] * Time.deltaTime;
+        _work -= NeedsDropSpeed[(int) CurrentOccupation, 2] * Time.deltaTime;
 
         _hunger = Math.Clamp(_hunger, 0, _maxHunger);
         _toilet = Math.Clamp(_toilet, 0, _maxToilet);
         _work = Math.Clamp(_work, 0, _maxWork);
+        
+        if (_hunger == 0 || _toilet == 0 || _work == 0) Destroy(gameObject);
     }
 }
